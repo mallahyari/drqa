@@ -15,8 +15,9 @@ export interface Config extends AxiosRequestConfig {
 export interface fileUploadResponse {
   data: {
     filename: string;
+    status: string;
   };
-  error: AxiosError;
+  error?: AxiosError | null;
 }
 
 export const uploadDocument = async (
@@ -29,12 +30,12 @@ export const uploadDocument = async (
   const result: fileUploadResponse = await axios
     .post(`${uploadUrl}/${endpoint}`, formData, config)
     .then((response: AxiosResponse) => {
-      console.log('File uploaded successfully');
-      return response.data;
-    })
-    .catch((error: AxiosError) => {
-      console.error('File upload failed');
-      return error;
+      const data = response.data;
+      return { data };
     });
+  // .catch((error: AxiosError) => {
+  //   console.error('File upload failed');
+  //   // return { data: { filename: '' }, error: error };
+  // });
   return result;
 };
