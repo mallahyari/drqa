@@ -35,7 +35,34 @@ export const uploadDocument = async (
     });
   // .catch((error: AxiosError) => {
   //   console.error('File upload failed');
-  //   // return { data: { filename: '' }, error: error };
+  //   return { data: { filename: '', status: '' }, error: error };
   // });
   return result;
+};
+
+export interface UserQuery {
+  query: string;
+}
+
+export interface QueryResponse {
+  response: string;
+  relevantDocs: [
+    {
+      content: string;
+      metadata?: {
+        source: string;
+      };
+    }
+  ];
+}
+
+export const getAnswer = async (inputQuery: string) => {
+  const inputData = { query: inputQuery };
+  const result = await axios.post(`${uploadUrl}/query`, inputData);
+  // console.log(result);
+  const data = {
+    response: result.data.response,
+    relevantDocs: result.data.relevant_docs,
+  };
+  return data;
 };
