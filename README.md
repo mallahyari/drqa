@@ -17,6 +17,16 @@ https://user-images.githubusercontent.com/28068313/228715902-e38d0b44-6736-4b56-
 
 ## Quick start
 
+If you are going to use [Qdrant Cloud](https://qdrant.tech/documentation/cloud/), then you need to sign up and get your `API_KEY` and `HOST_URL`. Otherwise you can run Qdrant locally. You can check out the documentation [here](https://qdrant.tech/). You also need OpenAI api key.
+
+After getting your keys, you have to create a `.env` file in `backend/app` directory with the following information:
+
+```python
+QDRANT_HOST=
+QDRANT_API_KEY=
+OPENAI_API_KEY=
+```
+
 Clone the repo:
 
 `git clone https://github.com/mallahyari/drqa.git`
