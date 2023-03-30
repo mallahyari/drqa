@@ -13,6 +13,10 @@ The image shows the architechture of the system and you can change the code base
 
 - **Frontend:** I developed it using React/Typescript.
 
+<video width="600" height="400" controls="controls" style="max-width: 730px;">
+  <source src="qa_demo.mp4" type="video/mp4">
+</video>
+
 ## Quick start
 
 Clone the repo:
@@ -33,6 +37,7 @@ This repo can be used as a general guide line for how to combine your own data w
 
 ## Future improvements
 
+- Streaming feature: The client will get the stream of response as soon as it becomes available.
 - Cache: Adding cache could make the system much more efficient. For similar or repeatitive questions, you don't need to generate response/call API as they are stored in the cache
 - UI: Rewriting the UI for better user experience
 - Adding different types of documents for question-answering. Currently, you can only use it for PDF files.
