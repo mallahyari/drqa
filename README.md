@@ -13,17 +13,7 @@ The image shows the architechture of the system and you can change the code base
 
 - **Frontend:** I developed it using React/Typescript.
 
-<<<<<<< HEAD
-<video width="600" height="400" controls="controls" >
-  <source src="qa_demo.mp4" type="video/mp4">
-</video>
-=======
-
 https://user-images.githubusercontent.com/28068313/228715902-e38d0b44-6736-4b56-94f6-dc31fa73783a.mp4
-
-
-
->>>>>>> 52ffcabab2915b04a2736973f2e0271dfb6ab936
 
 ## Quick start
 
