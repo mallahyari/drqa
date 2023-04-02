@@ -1,9 +1,11 @@
 fastapi==0.95.0
-gensim==4.3.0
+gensim
 nltk==3.8.1
 numpy==1.23.5
 pandas==1.5.3
-pydantic==1.10.5
+pydantic[dotenv]==1.10.5
+qdrant-client==1.1.1
+python-multipart==0.0.6
 uvicorn==0.21.1
 langchain
 sentence-transformers

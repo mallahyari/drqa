@@ -32,11 +32,16 @@ qa_chain = load_qa_chain(llm=OpenAI(openai_api_key=settings.openai_api_key, stre
 class QdrantIndex():
 
     def __init__(self, qdrant_host: str, qdrant_api_key: str, prefer_grpc: bool):
-        self.qdrant_client = QdrantClient(
-            host=qdrant_host, 
-            prefer_grpc=prefer_grpc,
-            api_key=qdrant_api_key
-        )
+        if qdrant_host == 'localhost':
+            self.qdrant_client = QdrantClient(
+                url="http://localhost:6333",
+            )
+        else:
+            self.qdrant_client = QdrantClient(
+                host=qdrant_host, 
+                prefer_grpc=prefer_grpc,
+                api_key=qdrant_api_key
+            )
         self.embedding_model =  embedding_model
         self.embedding_size = self.embedding_model.get_sentence_embedding_dimension()
         self.collection_name = COLLECTION_NAME

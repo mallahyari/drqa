@@ -33,11 +33,17 @@ Clone the repo:
 
 Running the frontend is very straightforward. You simply go to the `frontend` directory and run:
 
-`npm install`
+```bash
+npm install
+npm start
+```
 
 For running the backend, first create a virtual environment and then from `backend/app` directory run:
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+python main.py
+```
 
 ## Advantages
 
